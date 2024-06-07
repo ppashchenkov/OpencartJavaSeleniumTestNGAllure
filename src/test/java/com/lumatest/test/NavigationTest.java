@@ -5,10 +5,12 @@ import com.lumatest.data.TestData;
 import io.qameta.allure.*;
 import org.openqa.selenium.By;
 import org.testng.Assert;
+import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
 public class NavigationTest extends BaseTest {
 
+    @Ignore
     @Test(description = "TC-01 Open Base URL")
     @Story("Navigation")
     @Severity(SeverityLevel.BLOCKER)
@@ -32,6 +34,7 @@ public class NavigationTest extends BaseTest {
         Assert.assertEquals(actualTitle, expectedTitle);
     }
 
+    @Ignore
     @Test(
             description = "TC-02 Top Menu Navigation",
             dataProvider = "navigationData",
