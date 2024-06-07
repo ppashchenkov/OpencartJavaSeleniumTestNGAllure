@@ -1,7 +1,7 @@
-package com.lumatest.test;
+package opencart.test;
 
-import com.lumatest.base.BaseTest;
-import com.lumatest.data.TestData;
+import opencart.base.BaseTest;
+import opencart.data.TestData;
 import io.qameta.allure.*;
 import org.openqa.selenium.By;
 import org.testng.Assert;
@@ -10,7 +10,6 @@ import org.testng.annotations.Test;
 
 public class NavigationTest extends BaseTest {
 
-    @Ignore
     @Test(description = "TC-01 Open Base URL")
     @Story("Navigation")
     @Severity(SeverityLevel.BLOCKER)
@@ -18,7 +17,7 @@ public class NavigationTest extends BaseTest {
     @Link(TestData.BASE_URL)
     public void testOpenBaseURL() {
         Allure.step("Set up expected results.");
-        final String expectedURL = TestData.BASE_URL + "/";
+        final String expectedURL = TestData.BASE_URL + TestData.HOME_URL;
         final String expectedTitle = TestData.BASE_URL_TITLE;
 
         Allure.step("Open base URL.");
@@ -34,7 +33,7 @@ public class NavigationTest extends BaseTest {
         Assert.assertEquals(actualTitle, expectedTitle);
     }
 
-    @Ignore
+//    @Ignore
     @Test(
             description = "TC-02 Top Menu Navigation",
             dataProvider = "navigationData",
@@ -51,7 +50,7 @@ public class NavigationTest extends BaseTest {
         Allure.step("Open Base URL");
         getDriver().get(baseURL);
 
-        Allure.step("Click on " + navbarMenu.toString());
+        Allure.step("Click on " + "\"" + expectedTitle + "\"");
         getDriver().findElement(navbarMenu).click();
 
         Allure.step("Collect actualURL, actualTitle");
