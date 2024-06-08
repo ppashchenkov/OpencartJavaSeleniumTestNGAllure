@@ -5,12 +5,14 @@ import opencart.data.TestData;
 import io.qameta.allure.*;
 import org.openqa.selenium.By;
 import org.testng.Assert;
-import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
 public class NavigationTest extends BaseTest {
 
-    @Test(description = "TC-01 Open Base URL")
+    @Test(
+            groups = {"Smoke", "Regression"},
+            description = "TC-01 Open Base URL"
+    )
     @Story("Navigation")
     @Severity(SeverityLevel.BLOCKER)
     @Description("To verify that the base URL and title of the application are correct and as expected.")
@@ -33,8 +35,8 @@ public class NavigationTest extends BaseTest {
         Assert.assertEquals(actualTitle, expectedTitle);
     }
 
-//    @Ignore
     @Test(
+            groups = {"Smoke", "Regression"},
             description = "TC-02 Top Menu Navigation",
             dataProvider = "navigationData",
             dataProviderClass = TestData.class
