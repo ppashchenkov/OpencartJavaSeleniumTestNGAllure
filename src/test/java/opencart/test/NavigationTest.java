@@ -44,14 +44,16 @@ public class NavigationTest extends BaseTest {
     @Description("To verify that the top menu navigation on the website functions correctly by ensuring that " +
             "clicking on menu items directs the user to the expected URL with the expected title.")
     @Link(TestData.BASE_URL)
-    public void testNavigationMenu(String baseURL, By navbarMenu, String expectedURL, String expectedTitle) {
-                                // {BASE_URL,      WHATS_NEW_MENU, WHATS_NEW_URL,        WHATS_NEW_TITLE},
-                                //{BASE_URL,       SALE_MENU,      SALE_URL,              SALE_TITLE}
+    public void testNavigationMenu(Boolean multi, By navbarMenu, By subMenu, String expectedURL, String expectedTitle) {
+
         Allure.step("Open Base URL");
-        getDriver().get(baseURL);
+        getDriver().get(TestData.BASE_URL);
 
         Allure.step("Click on " + "\"" + expectedTitle + "\"");
         getDriver().findElement(navbarMenu).click();
+        if(multi) {
+            getDriver().findElement(subMenu).click();
+        }
 
         Allure.step("Collect actualURL, actualTitle");
         final String actualURL = getDriver().getCurrentUrl();
