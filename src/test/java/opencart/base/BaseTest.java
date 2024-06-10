@@ -50,7 +50,7 @@ public abstract class BaseTest {
         }
     }
 
-    public WebDriver getDriver() {
+    protected WebDriver getDriver() {
 
         return this.driver;
     }
