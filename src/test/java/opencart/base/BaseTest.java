@@ -2,12 +2,11 @@ package opencart.base;
 
 import opencart.utils.DriverUtils;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import opencart.utils.ReportUtils;
 import org.openqa.selenium.WebDriver;
+import org.testng.ITestResult;
 import org.testng.Reporter;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.Parameters;
+import org.testng.annotations.*;
 
 public abstract class BaseTest {
     private WebDriver driver;
@@ -27,8 +26,9 @@ public abstract class BaseTest {
 
     @Parameters("browser")
     @BeforeMethod
-    protected void setupDriver(String browser) {
+    protected void setupDriver(@Optional("chrome") String browser, ITestResult result) {
         Reporter.log("______________________________________________________", true);
+        Reporter.log("RUN " + result.getMethod().getMethodName(), true);
         this.driver = DriverUtils.createDriver(browser, this.driver);
         if(getDriver() == null) {
             Reporter.log("ERROR: Unknown parameter 'browser' = '" + browser + "'", true);
@@ -39,7 +39,8 @@ public abstract class BaseTest {
 
     @Parameters("browser")
     @AfterMethod(alwaysRun = true)
-    protected void tearDown(String browser) {
+    protected void tearDown(@Optional("chrome") String browser, ITestResult result) {
+        Reporter.log(result.getMethod().getMethodName() + ": " + ReportUtils.getStatus(result), true);
         if (this.driver != null) {
             getDriver().quit();
             Reporter.log("INFO: " + browser.toUpperCase() + " driver closed", true);
