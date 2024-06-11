@@ -8,9 +8,10 @@
             <class name="opencart.test.NavigationTest">
                 <methods>
                     <include name="testOpenBaseURL"/>
-<!--                    <include name="testNavigationMenu"/>-->
+                    <include name="testNavigationMenu"/>
                 </methods>
             </class>
+            <class name="opencart.test.CamerasTest"></class>
         </classes>
     </test>
 
@@ -20,9 +21,10 @@
             <class name="opencart.test.NavigationTest">
                 <methods>
                     <include name="testOpenBaseURL"/>
-<!--                    <include name="testNavigationMenu"/>-->
+                    <include name="testNavigationMenu"/>
                 </methods>
             </class>
+            <class name="opencart.test.CamerasTest"></class>
         </classes>
     </test>
 
