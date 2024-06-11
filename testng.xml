@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="All Test Suite" parallel="tests" thread-count="2" data-provider-thread-count="2">
+<suite name="All Test Suite" parallel="tests" thread-count="4" data-provider-thread-count="4">
 
     <test verbose="2" name="Chrome test">
         <parameter name="browser" value="chrome" />
@@ -8,9 +8,10 @@
             <class name="opencart.test.NavigationTest">
                 <methods>
                     <include name="testOpenBaseURL"/>
-<!--                    <include name="testNavigationMenu"/>-->
+                    <include name="testNavigationMenu"/>
                 </methods>
             </class>
+            <class name="opencart.test.CamerasTest"></class>
         </classes>
     </test>
 
@@ -20,9 +21,10 @@
             <class name="opencart.test.NavigationTest">
                 <methods>
                     <include name="testOpenBaseURL"/>
-<!--                    <include name="testNavigationMenu"/>-->
+                    <include name="testNavigationMenu"/>
                 </methods>
             </class>
+            <class name="opencart.test.CamerasTest"></class>
         </classes>
     </test>
 
