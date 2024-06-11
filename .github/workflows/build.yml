@@ -46,16 +46,16 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
 
-    - name: Test with Maven
-      run: mvn test
+#    - name: Test with Maven
+#      run: mvn test
 
-    - name: Dorny Test Reporter
-      uses: dorny/test-reporter@v1.9.1
-      if: success() || failure()
-      with:
-        name: Dorny Test Report for ${{ matrix.os }}
-        path: target/surefire-reports/TEST-*.xml
-        reporter: java-junit
+#    - name: Dorny Test Reporter
+#      uses: dorny/test-reporter@v1.9.1
+#      if: success() || failure()
+#      with:
+#        name: Dorny Test Report for ${{ matrix.os }}
+#        path: target/surefire-reports/TEST-*.xml
+#        reporter: java-junit
 
     - name: Load Allure test report history
       uses: actions/checkout@v4
