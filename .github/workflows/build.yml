@@ -18,7 +18,7 @@ jobs:
     strategy:
       max-parallel: 2
       matrix:
-        os: [ ubuntu-latest ]
+        os: [ windows-latest ]
 
     runs-on: ${{ matrix.os }}
 
@@ -67,7 +67,7 @@ jobs:
 
     - name: Build Allure test report
       uses: simple-elf/allure-report-action@v1.7
-      if: ${{ matrix.os == 'ubuntu-latest' }}
+      if: ${{ matrix.os == 'windows-latest' }}
       with:
         gh_pages: gh-pages
         allure_history: allure-history
@@ -75,7 +75,7 @@ jobs:
 
     - name: Publish Allure test report
       uses: peaceiris/actions-gh-pages@v3
-      if: ${{ matrix.os == 'ubuntu-latest' }}
+      if: ${{ matrix.os == 'windows-latest' }}
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_branch: gh-pages
@@ -84,7 +84,7 @@ jobs:
   check-java-code-style:
     name: Check Java code style
 
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
     - name: Clone code from repo
