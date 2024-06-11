@@ -82,6 +82,9 @@ public class TestData {
     public static final By CAMERAS_MENU = By.xpath("//ul[@class='nav navbar-nav']//li/a[text()='Cameras']");
     public static final String CAMERAS_URL = "/index.php?route=product/category&path=33";
     public static final String CAMERAS_TITLE = "Cameras";
+    public static final String CAMERA_CANON = "Canon EOS 5D";
+    public static final String CAMERA_NIKON = "Nikon D300";
+    public static final String CAMERAS_BREADCRUMB_FIRST = "Cameras ";
 
     //Allure.step("SetUp expected results");
     @DataProvider(name = "navigationData")
@@ -104,6 +107,14 @@ public class TestData {
                 {false, PHONES_PDAS_MENU, null, BASE_URL + PHONES_PDAS_URL, PHONES_PDAS_TITLE},
                 {false, CAMERAS_MENU, null, BASE_URL + CAMERAS_URL, CAMERAS_TITLE},
                 {true, MP3PLAYERS_MENU, SUB_ALL_MP3PLAYERS_MENU, BASE_URL + SUB_ALL_MP3PLAYERS_URL, SUB_ALL_MP3PLAYERS_TITLE}
+        };
+    }
+
+    @DataProvider(name = "camerasData")
+    public static Object[][] getProductData() {
+        return new Object[][]{
+                {CAMERA_CANON},
+                {CAMERA_NIKON}
         };
     }
 

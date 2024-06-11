@@ -1,5 +1,7 @@
 package opencart.base;
 
+import io.qameta.allure.Allure;
+import opencart.data.TestData;
 import opencart.utils.DriverUtils;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import opencart.utils.ReportUtils;
@@ -10,19 +12,14 @@ import org.testng.annotations.*;
 
 public abstract class BaseTest {
     private WebDriver driver;
-//    private final String browser = "chrome";
-//
+
     @BeforeSuite
     protected void setupWebDriverManager() {
         WebDriverManager.chromedriver().setup();
         WebDriverManager.firefoxdriver().setup();
 //        WebDriverManager.safaridriver().setup();
-        //    WebDriverManager.edgedriver().setup();
-        //    WebDriverManager.operadriver().setup();
-        //    WebDriverManager.chromiumdriver().setup()
-        //    WebDriverManager.iedriver().setup();
-    }
 
+    }
 
     @Parameters("browser")
     @BeforeMethod
@@ -35,6 +32,9 @@ public abstract class BaseTest {
             System.exit(1);
         }
         Reporter.log("INFO: " + browser.toUpperCase() + " driver created", true);
+
+        Allure.step("Open base URL.");
+        getDriver().get(TestData.BASE_URL);
     }
 
     @Parameters("browser")

@@ -26,7 +26,7 @@
                 <artifactId>allure-bom</artifactId>
                 <version>${allure.version}</version>
                 <type>pom</type>
-                <scope>import</scope>
+<!--                <scope>import</scope>-->
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -54,7 +54,6 @@
         <dependency>
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-testng</artifactId>
-            <scope>test</scope>
         </dependency>
     </dependencies>
 
