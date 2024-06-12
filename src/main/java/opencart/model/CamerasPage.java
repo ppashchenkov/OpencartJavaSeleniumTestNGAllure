@@ -13,7 +13,7 @@ public class CamerasPage extends SideMenu {
         super(driver);
     }
 
-    @Step("Click '{productName}' Img.")
+    @Step("Click '{camera}' Img.")
     public ProductPage clickCameraImg(String camera) {
         getWait().until(ExpectedConditions.visibilityOf(getDriver()
                 .findElement(By.xpath(cameraXpath + camera + "']")))).click();
