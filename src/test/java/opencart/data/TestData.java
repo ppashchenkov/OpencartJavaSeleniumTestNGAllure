@@ -1,6 +1,5 @@
 package opencart.data;
 
-import io.qameta.allure.Allure;
 import org.openqa.selenium.By;
 import org.testng.annotations.DataProvider;
 
@@ -9,7 +8,6 @@ public class TestData {
     public static final String BASE_URL_TITLE = "Your Store";
     public static final String HOME_URL = "/";
 
-    //NavBar Menu
     public static final By DESKTOPS_MENU = By.xpath("//ul[@class='nav navbar-nav']//li/a[text()='Desktops']");
     public static final By SUB_PC_MENU = By.xpath("//a[@href='https://naveenautomationlabs.com/opencart/index.php?route=product/category&path=20_26']");
     public static final String SUB_PC_URL = "/index.php?route=product/category&path=20_26";
@@ -86,7 +84,6 @@ public class TestData {
     public static final String CAMERA_NIKON = "Nikon D300";
     public static final String CAMERAS_BREADCRUMB_FIRST = "Cameras ";
 
-    //Allure.step("SetUp expected results");
     @DataProvider(name = "navigationData")
     public static Object[][] getNavMenuData() {
         return new Object[][] {
@@ -117,7 +114,4 @@ public class TestData {
                 {CAMERA_NIKON}
         };
     }
-
-
-
 }
