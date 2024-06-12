@@ -1,6 +1,6 @@
 package opencart.model;
 
-import io.qameta.allure.*;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -13,7 +13,7 @@ public class CamerasPage extends SideMenu {
         super(driver);
     }
 
-//    Allure.step("click Camera Image");
+    @Step("Click '{productName}' Img.")
     public ProductPage clickCameraImg(String camera) {
         getWait().until(ExpectedConditions.visibilityOf(getDriver()
                 .findElement(By.xpath(cameraXpath + camera + "']")))).click();
