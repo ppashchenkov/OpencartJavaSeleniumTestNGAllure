@@ -1,5 +1,0 @@
-"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"unknown","Fri Jun 07 14:01:57 GMT 2024","Fri Jun 07 14:01:57 GMT 2024","0","Surefire suite","Surefire test","TestTest","TestTest","testFail","testFail",""
-"unknown","Fri Jun 07 14:01:57 GMT 2024","Fri Jun 07 14:01:57 GMT 2024","1","Surefire suite","Surefire test","com.lumatest.test.NavigationTest","com.lumatest.test.NavigationTest","testNavigationMenu","TC-02 Top Menu Navigation","To verify that the top menu navigation on the website functions correctly by ensuring that clicking on menu items directs the user to the expected URL with the expected title."
-"unknown","Fri Jun 07 14:01:57 GMT 2024","Fri Jun 07 14:01:57 GMT 2024","1","Surefire suite","Surefire test","com.lumatest.test.NavigationTest","com.lumatest.test.NavigationTest","testOpenBaseURL","TC-01 Open Base URL","To verify that the base URL and title of the application are correct and as expected."
-"passed","Fri Jun 07 14:01:57 GMT 2024","Fri Jun 07 14:01:57 GMT 2024","5","Surefire suite","Surefire test","TestTest","TestTest","testPass","testPass",""
