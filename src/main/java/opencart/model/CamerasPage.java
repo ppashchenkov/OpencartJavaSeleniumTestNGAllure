@@ -15,7 +15,7 @@ public class CamerasPage extends SideMenu {
 
     @Step("Click '{camera}' Img.")
     public ProductPage clickCameraImg(String camera) {
-        getWait().until(ExpectedConditions.visibilityOf(getDriver()
+        getWait5().until(ExpectedConditions.visibilityOf(getDriver()
                 .findElement(By.xpath(cameraXpath + camera + "']")))).click();
 
         return new ProductPage(getDriver());
