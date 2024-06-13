@@ -33,6 +33,7 @@ public class ProductsPage extends SideMenu {
         return productsTitle.getText();
     }
 
+    @Step("Get Product List")
     public List<WebElement> getProductsList() {
         List<WebElement> lst = new ArrayList<>();
         lst = getDriver().findElements(By.xpath("//div[@class='caption']/h4"));
@@ -40,7 +41,7 @@ public class ProductsPage extends SideMenu {
         return lst;
     }
 
-    @Step("Click '{productName}' Img.")
+    @Step("Click '{productName}' Image.")
     public ProductPage clickProductImg(String productName) {
         getWait5().until(ExpectedConditions.visibilityOf(getDriver()
                 .findElement(By.xpath(productXpath + productName + "']")))).click();
