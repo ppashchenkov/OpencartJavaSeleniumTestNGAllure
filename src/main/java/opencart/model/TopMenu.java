@@ -1,5 +1,6 @@
 package opencart.model;
 
+import jdk.javadoc.doclet.Reporter;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -16,9 +17,6 @@ abstract class TopMenu extends BasePage {
 
     @FindBy(css = "h1")
     private WebElement productName;
-
-    @FindBy(xpath = "//div[@id='logo']")
-    private WebElement logo;
 
     protected TopMenu(WebDriver driver) {
         super(driver);
@@ -40,11 +38,5 @@ abstract class TopMenu extends BasePage {
             }
             } catch (Exception e) {}
         return new ProductsPage(getDriver());
-    }
-
-    public HomePage gotoHomePage() {
-        logo.click();
-
-        return new HomePage(getDriver());
     }
 }
