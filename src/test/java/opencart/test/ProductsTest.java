@@ -12,8 +12,6 @@ import org.testng.annotations.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-import java.nio.channels.AsynchronousServerSocketChannel;
-
 public class ProductsTest extends BaseTest {
 
     @Test(
