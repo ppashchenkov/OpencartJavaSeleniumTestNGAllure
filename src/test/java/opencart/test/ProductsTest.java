@@ -1,5 +1,6 @@
 package opencart.test;
 
+import io.qameta.allure.Allure;
 import opencart.base.BaseTest;
 import opencart.data.TestData;
 import opencart.model.HomePage;
@@ -26,6 +27,7 @@ public class ProductsTest extends BaseTest {
         ProductsPage products = new HomePage(getDriver()).clickTopMenuProductType(productsType);
         String actualProductsTitle = products.getProductstitle();
 
+        Allure.step("Compare actaul ProductsPage Title with Expected title.");
         Assert.assertEquals(actualProductsTitle, productsType);
 
         List<WebElement> productList = new ArrayList<>();
@@ -45,7 +47,10 @@ public class ProductsTest extends BaseTest {
                 final String ACTUAL_BREADCRUMB_TEXT = currentProduct.getBreadcrumbTopText();
                 final String EXPECTED_BREADCRUMB_TEXT = productsType + " " + actualProductName;
 
+                Allure.step("Compare actaul Product's Name with Expected name.");
                 Assert.assertEquals(actualProductName, expectedProductName);
+
+                Allure.step("Compare actaul Breadcrumb with Expected.");
                 Assert.assertEquals(EXPECTED_BREADCRUMB_TEXT, ACTUAL_BREADCRUMB_TEXT);
         }
     }

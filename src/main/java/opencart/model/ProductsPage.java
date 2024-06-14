@@ -28,6 +28,7 @@ public class ProductsPage extends SideMenu {
         super(driver);
     }
 
+    @Step("Get ProductsPage Title")
     public String getProductstitle() {
 
         return productsTitle.getText();
