@@ -9,13 +9,4 @@
             <class name="FrameworkTest"/>
         </classes>
     </test>
-
-<!--    <test name="ChromiumTest" verbose="10">-->
-<!--        <parameter name="browser" value="chromium"/>-->
-<!--        <classes>-->
-<!--            <class name="com.opencart.test.NavigationTest"/>-->
-<!--            <class name="com.opencart.test.ProductsTest"/>-->
-<!--            <class name="FrameworkTest"/>-->
-<!--        </classes>-->
-<!--    </test>-->
 </suite>

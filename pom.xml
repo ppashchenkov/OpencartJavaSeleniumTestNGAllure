@@ -71,7 +71,7 @@
                     </argLine>
                     <suiteXmlFiles>
                         <suiteXmlFile>
-                            <suiteXmlFile>xmlSuits/chromeChromium.xml</suiteXmlFile>
+                            <suiteXmlFile>xmlSuits/chrome.xml</suiteXmlFile>
                         </suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
