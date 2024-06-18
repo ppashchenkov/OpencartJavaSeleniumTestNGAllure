@@ -1,8 +1,8 @@
-package opencart.test;
+package com.opencart.test;
 
-import io.qameta.allure.Allure;
-import opencart.base.BaseTest;
-import opencart.data.TestData;
+import com.opencart.base.BaseTest;
+import io.qameta.allure.*;
+import com.opencart.data.TestData;
 import opencart.model.HomePage;
 import opencart.model.ProductPage;
 import opencart.model.ProductsPage;
@@ -18,9 +18,14 @@ public class ProductsTest extends BaseTest {
     @Test(
             description = "TC-20 Top Menu All Products",
             testName = "PRODUCTS | test All Products",
+            groups = {"regression"},
             dataProvider = "productsData",
             dataProviderClass = TestData.class
     )
+    @Story("Product Details")
+    @Severity(SeverityLevel.NORMAL)
+    @Description("To verify that the product page displays the correct product name and breadcrumb menu text " +
+            "for the 'Driven Backpack'.")
     public void testProducts(String productsType) {
         String productName = "";
 

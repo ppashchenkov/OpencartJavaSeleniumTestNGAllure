@@ -1,4 +1,4 @@
-package opencart.data;
+package com.opencart.data;
 
 import org.openqa.selenium.By;
 import org.testng.annotations.DataProvider;

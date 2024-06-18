@@ -17,6 +17,8 @@
 
         <allure.version>2.24.0</allure.version>
         <aspectj.version>1.9.20.1</aspectj.version>
+
+        <tests.skip>false</tests.skip>
     </properties>
 
     <dependencyManagement>
@@ -69,7 +71,7 @@
                     </argLine>
                     <suiteXmlFiles>
                         <suiteXmlFile>
-                            testng.xml
+                            <suiteXmlFile>xmlSuits/chromeChromium.xml</suiteXmlFile>
                         </suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
