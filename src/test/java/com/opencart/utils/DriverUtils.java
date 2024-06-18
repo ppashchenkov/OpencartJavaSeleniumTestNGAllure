@@ -1,4 +1,4 @@
-package opencart.utils;
+package com.opencart.utils;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -7,6 +7,9 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.safari.SafariOptions;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class DriverUtils {
     private static final ChromeOptions chromeOptions;
@@ -23,6 +26,13 @@ public class DriverUtils {
         chromeOptions.addArguments("--disable-dev-shm-usage");
         chromeOptions.addArguments("--disable-web-security");
 
+        Map<String, Object> prefs = new HashMap<String, Object>();
+        prefs.put("download.default_directory", "./src/test/resources");
+        prefs.put("download.prompt_for_download", false);
+        prefs.put("download.directory_upgrade", true);
+        prefs.put( "safebrowsing.enabled", true);
+        chromeOptions.setExperimentalOption("prefs", prefs);
+
         firefoxOptions = new FirefoxOptions();
         firefoxOptions.addArguments("--incognito");
         firefoxOptions.addArguments("--headless");
@@ -30,7 +40,7 @@ public class DriverUtils {
         firefoxOptions.addArguments("--disable-gpu");
         firefoxOptions.addArguments("--no-sandbox");
         firefoxOptions.addArguments("--disable-dev-shm-usage");
-        firefoxOptions.addArguments("--disable-web-security");
+//        firefoxOptions.addArguments("--disable-web-security");
 
         safariOptions = new SafariOptions();
 //        safariOptions.("--incognito");

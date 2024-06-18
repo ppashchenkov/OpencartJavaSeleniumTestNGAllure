@@ -1,7 +1,7 @@
-package opencart.test;
+package com.opencart.test;
 
-import opencart.base.BaseTest;
-import opencart.data.TestData;
+import com.opencart.base.BaseTest;
+import com.opencart.data.TestData;
 import opencart.model.HomePage;
 import opencart.model.ProductPage;
 import org.testng.Assert;
