@@ -70,7 +70,7 @@
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                     </argLine>
                     <suiteXmlFiles>
-                        xmlSuits/chrome.xml
+                        <suiteXmlFile>xmlSuits/chrome.xml</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
                 <dependencies>

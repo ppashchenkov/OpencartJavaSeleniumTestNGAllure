@@ -47,9 +47,9 @@ jobs:
         if: ${{ matrix.os == 'ubuntu-latest' }}
         run: mvn clean -e install -Dmaven.test.skip=true
 
-#      - name: Test Framework
-#        if: ${{ matrix.os == 'ubuntu-latest' }}
-#        run: mvn clean test -Dtest=FrameworkTest
+      - name: Test Framework
+        if: ${{ matrix.os == 'ubuntu-latest' }}
+        run: mvn clean test -Dtest=FrameworkTest
 
       - name: Cross Browser Testing
         if: ${{ matrix.os == 'ubuntu-latest' }}
