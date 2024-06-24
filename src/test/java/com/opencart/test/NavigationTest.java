@@ -23,8 +23,8 @@ public class NavigationTest extends BaseTest {
         final String expectedURL = TestData.BASE_URL + TestData.HOME_URL;
         final String expectedTitle = TestData.BASE_URL_TITLE;
 
-        Allure.step("Open base URL.");
-        getDriver().get(TestData.BASE_URL);
+//        Allure.step("Open base URL.");
+//        getDriver().get(TestData.BASE_URL);
 
         Allure.step("Collect actual URL and actual title.");
         final String actualURL = getDriver().getCurrentUrl();
@@ -50,8 +50,8 @@ public class NavigationTest extends BaseTest {
     @Link(TestData.BASE_URL)
     public void testNavigationMenu(Boolean multi, By navbarMenu, By subMenu, String expectedURL, String expectedTitle) {
 
-        Allure.step("Open Base URL");
-        getDriver().get(TestData.BASE_URL);
+//        Allure.step("Open Base URL");
+//        getDriver().get(TestData.BASE_URL);
 
         Allure.step("Click on " + "\"" + expectedTitle + "\"");
         getDriver().findElement(navbarMenu).click();
