@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 public class NavigationTest extends BaseTest {
 
     @Test(
-            groups = {"Smoke", "Regression"},
+            groups = {"smoke", "regression"},
             description = "TC-01 Open Base URL",
             testName = "NAVIGATION | Open Base URL"
     )
@@ -34,7 +34,7 @@ public class NavigationTest extends BaseTest {
     }
 
     @Test(
-            groups = {"Smoke", "Regression"},
+            groups = {"smoke", "regression"},
             description = "TC-02 Top Menu Navigation",
             testName = "NAVIGATION | test Main Menu",
             dataProvider = "navigationData",
